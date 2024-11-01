@@ -1,6 +1,10 @@
 print ("Hello I am Jarvis, your virtual pizza ordering assistant! With Whom do I have the pleasure of assisting today?")
-userName = input("Enter your name: ")
-print (f"\nHello, Master {userName}. Nice to meet you!")
+userName = input("\nEnter your name: ")
+if userName.lower() == "james":
+    print(f"\nWe meet again, Master {userName}. Lets get started with some pizza!")
+else:
+    print(f"\nHello, Master {userName}. Nice to meet you!")
+
 
 #What Pizza we want
 
@@ -11,15 +15,31 @@ qauntity = input(f"\nGreat! Now how many should I order Master {userName} Please
 qauntity = int(qauntity)
 method = input(f"\nLastly, Now is this carryout or delivery Master {userName}: ")
 
+if method.lower() == "delivery":
+    deliveryFee = 5
+else:
+    deliveryFee = 0
+
 salesTax = 1.1
-pizzaCost = 14.99
-total = (pizzaCost * qauntity) * salesTax
+
+if size.lower() == "small":
+    pizzaCost = 8.99
+elif size.lower() == "medium":
+    pizzaCost = 14.99
+elif size.lower() == "large":
+    pizzaCost = 17.99
+total = (pizzaCost * qauntity) * salesTax + deliveryFee
 
 print("-" * 10)
 print(f"Thank you, {userName}, for your order.")
 print(f"Your {qauntity} {size} {flavor} pizzas(s) with {crustType} crust costs ${total:,.2f}.")
 print("-" * 10)
 
-
+if total >= 50:
+    print("\nCongratulations! You've been awarded a $10 Off coupon for your next order.")
+else:
+    print("\nOrder over $50 will reecieve a free $10 Off coupon!")
+    
+print("-" * 10)
 
 
