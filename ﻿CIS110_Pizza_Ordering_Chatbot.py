@@ -51,7 +51,6 @@ print("-" * 10)
 print(f"Thank you, {userName}, for your order.")
 print(f"Your {qauntity} {size} {flavor} pizzas(s) with {crustType} crust costs ${total:,.2f}.")
 print("-" * 10)
-
 if total >= 50:
     print("\nCongratulations! You've been awarded a $10 Off coupon for your next order.")
 else:
